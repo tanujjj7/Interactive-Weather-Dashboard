@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <h1>Weather Dashboard</h1>
+            <div class="location-search">
+                <input type="text" id="citySearchInput" placeholder="Enter City Name (e.g., Mathura)">
+                <button id="searchButton">Search</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="map-section">
+                <h2>Weather Map</h2>
+                <div id="weatherMap"></div> <div class="map-overlay">
+                    <p id="currentMapLocation">Location: Select a city</p>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="current-weather">
+                    <h2>Current Conditions</h2>
+                    <div class="weather-card">
+                        <p><strong>Temperature:</strong> <span id="currentTemp">N/A</span></p>
+                        <p><strong>Wind Speed:</strong> <span id="currentWind">N/A</span></p>
+                        <p><strong>Humidity:</strong> <span id="currentHumidity">N/A</span></p>
+                        <p><strong>Pressure:</strong> <span id="currentPressure">N/A</span></p>
+                        <p><strong>Description:</strong> <span id="weatherDescription">N/A</span></p>
+                        <p><strong>AQI:</strong> <span id="currentAqi">N/A</span></p>
+                        <p><strong>UV Index:</strong> <span id="currentUvi">N/A</span></p>
+                        <p><strong>Sunrise:</strong> <span id="sunriseTime">N/A</span></p>
+                        <p><strong>Sunset:</strong> <span id="sunsetTime">N/A</span></p>
+                    </div>
+                </div>
+
+                <div class="forecast-charts">
+    <h2>Forecast Over Time</h2>
+    <div class="chart-header" id="forecastHeader">
+        </div>
+    <div class="chart-wrapper">
+         <canvas id="windChart"></canvas>
+    </div>
+    <div class="chart-wrapper">
+         <canvas id="humidityChart"></canvas>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
